@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace GithubMobileApp.ViewModels
 {
@@ -17,6 +18,10 @@ namespace GithubMobileApp.ViewModels
         public virtual void OnAppearing()
         {
 
+        }
+
+        public virtual async Task Initialization()
+        {
         }
     }
 }

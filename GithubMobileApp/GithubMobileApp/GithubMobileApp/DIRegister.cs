@@ -1,4 +1,8 @@
 ﻿using Autofac;
+using GithubMobileApp.Core.Repositories;
+using GithubMobileApp.Core.Repositories.Interfaces;
+using GithubMobileApp.Core.Services;
+using GithubMobileApp.Core.Services.Interfaces;
 using GithubMobileApp.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -21,7 +25,8 @@ namespace GithubMobileApp
         public static void RegisterDI()
         {
             GetDIRegister();
-
+            RegisterTypeSingleto<IUserRequestService, UserRequestService>();
+            RegisterTypeSingleto<IUserRepository, UserRepository>();
 
             RegisterDIViewModel();
         }

@@ -16,7 +16,11 @@ namespace GithubMobileApp.Pages
         public MainUserListPage()
         {
             InitializeComponent();
-            BindingContext = DependencyService.Resolve<MainUserListViewModel>();
+
+            var viewModel = DependencyService.Resolve<MainUserListViewModel>();
+            BindingContext = viewModel;
+
+            viewModel.Initialization();
         }
     }
 }
