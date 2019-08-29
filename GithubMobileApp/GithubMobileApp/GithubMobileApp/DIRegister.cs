@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using GithubMobileApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -27,7 +28,7 @@ namespace GithubMobileApp
 
         public static void RegisterDIViewModel()
         {
-
+            RegisterType<MainUserListViewModel>();
         }
 
         public static DIRegister GetDIRegister()

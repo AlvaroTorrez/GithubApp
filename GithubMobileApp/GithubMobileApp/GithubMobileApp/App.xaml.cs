@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GithubMobileApp.Pages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,9 +10,13 @@ namespace GithubMobileApp
     {
         public App()
         {
+            DIRegister.RegisterDI();
+
+            DIRegister.BuildContainer();
+
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MainUserListPage();
         }
 
         protected override void OnStart()
