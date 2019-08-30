@@ -15,5 +15,8 @@ namespace GithubMobileApp.Core.Models
 
         [JsonProperty("html_url")]
         public string UserUrl { get; set; }
+
+        [JsonProperty("id")]
+        public int Id { get; set; }
     }
 }

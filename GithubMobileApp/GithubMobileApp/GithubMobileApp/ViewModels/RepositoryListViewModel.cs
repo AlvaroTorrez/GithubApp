@@ -1,8 +1,6 @@
 ﻿using GithubMobileApp.Core.Models;
-using System;
-using System.Collections.Generic;
+using GithubMobileApp.Core.Repositories.Interfaces;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace GithubMobileApp.ViewModels
@@ -13,18 +11,12 @@ namespace GithubMobileApp.ViewModels
 
         public ObservableCollection<GitRepository> GitRepositoriesSource { get; set; }
 
-        public RepositoryListViewModel()
-        {
-            GitRepositoriesSource = new ObservableCollection<GitRepository>();
+        private IGitRepositoryRepository _gitRepositoryRepository;
 
-            GitRepositoriesSource.Add(new GitRepository
-            {
-                RepositoryName = "Test name",
-                Description = "Test Description",
-                ForksCount = 10,
-                OpenIssuesCount = 20,
-                UrlRepository = "https://github.com/AlvaroTorrez/GithubApp"
-            });
+        public RepositoryListViewModel(IGitRepositoryRepository gitRepositoryRepository)
+        {
+            _gitRepositoryRepository = gitRepositoryRepository;
+            GitRepositoriesSource = new ObservableCollection<GitRepository>();
         }
 
         public override void Prepare(User date)
@@ -35,7 +27,8 @@ namespace GithubMobileApp.ViewModels
 
         public override async Task Initialization()
         {
-
+            var repositoriesResult = await _gitRepositoryRepository.GetAllRepositoriesByUser(User.UserName);
+            GitRepositoriesSource = new ObservableCollection<GitRepository>(repositoriesResult);
         }
 
     }

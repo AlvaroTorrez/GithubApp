@@ -3,7 +3,9 @@
           xmlns="http://xamarin.com/schemas/2014/forms"
           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ViewCell.View>
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Grid Margin="0,0,0,7"
+              HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="7*" />
@@ -23,10 +25,13 @@
                    Source="{Binding AvatarUrl}" />
             <Label Grid.Row="1"
                    Grid.Column="1"
-                   Text="{Binding UserName}" />
+                   FontSize="Medium"
+                   Text="{Binding UserName}"
+                   TextColor="Black" />
             <Label Grid.Row="2"
                    Grid.Column="1"
-                   Text="{Binding UserUrl}">
+                   Text="{Binding UserUrl}"
+                   TextColor="Blue">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="TapOpenBrowserLink" />
                 </Label.GestureRecognizers>

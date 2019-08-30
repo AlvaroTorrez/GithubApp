@@ -12,16 +12,20 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Label Grid.Row="0"
                    Grid.Column="0"
-                   Text="{Binding RepositoryName}" />
+                   FontSize="Medium"
+                   Text="{Binding RepositoryName}"
+                   TextColor="Black" />
             <Label Grid.Row="1"
                    Grid.Column="0"
                    Text="{Binding Description}" />
             <Label Grid.Row="2"
                    Grid.Column="0"
-                   Text="{Binding UrlRepository}">
+                   Text="{Binding UrlRepository}"
+                   TextColor="Blue">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="TapOpenBrowserLink" />
                 </Label.GestureRecognizers>
@@ -30,9 +34,20 @@
             <StackLayout Grid.Row="3"
                          Grid.Column="0"
                          Orientation="Horizontal">
-                <Label HorizontalOptions="CenterAndExpand" Text="{Binding OpenIssuesCount, StringFormat='Issues {0}'}" />
-                <Label HorizontalOptions="CenterAndExpand" Text="{Binding ForksCount, StringFormat='Forks {0}'}" />
+                <Label HorizontalOptions="CenterAndExpand"
+                       Text="{Binding OpenIssuesCount, StringFormat='Issues {0}'}"
+                       TextColor="Red" />
+                <Label HorizontalOptions="CenterAndExpand"
+                       Text="{Binding ForksCount, StringFormat='Forks {0}'}"
+                       TextColor="Blue" />
             </StackLayout>
+
+            <BoxView Grid.Row="4"
+                     Grid.Column="0"
+                     Margin="5"
+                     BackgroundColor="Black"
+                     HeightRequest="2"
+                     HorizontalOptions="FillAndExpand" />
         </Grid>
     </ViewCell.View>
 </ViewCell>

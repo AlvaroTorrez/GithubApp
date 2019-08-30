@@ -28,6 +28,9 @@ namespace GithubMobileApp
             RegisterTypeSingleto<IUserRequestService, UserRequestService>();
             RegisterTypeSingleto<IUserRepository, UserRepository>();
 
+            RegisterTypeSingleto<IRepositoryRequestService, RepositoryRequestService>();
+            RegisterTypeSingleto<IGitRepositoryRepository, GitRepositoryRepository>();
+
             RegisterDIViewModel();
         }
 
