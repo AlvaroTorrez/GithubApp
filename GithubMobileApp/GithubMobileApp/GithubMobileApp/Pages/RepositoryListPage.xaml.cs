@@ -1,4 +1,5 @@
-﻿using GithubMobileApp.ViewModels;
+﻿using GithubMobileApp.Core.Models;
+using GithubMobileApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +12,17 @@ using Xamarin.Forms.Xaml;
 namespace GithubMobileApp.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainUserListPage : ContentPage
+    public partial class RepositoryListPage : ContentPage
     {
-        public MainUserListPage()
+        public RepositoryListPage(User userInfo)
         {
             InitializeComponent();
 
-            var viewModel = DependencyService.Resolve<MainUserListViewModel>();
+            var viewModel = DependencyService.Resolve<RepositoryListViewModel>();
+
             BindingContext = viewModel;
 
-            viewModel.Prepare();
+            viewModel.Prepare(userInfo);
         }
     }
 }

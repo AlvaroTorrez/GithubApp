@@ -34,6 +34,7 @@ namespace GithubMobileApp
         public static void RegisterDIViewModel()
         {
             RegisterType<MainUserListViewModel>();
+            RegisterType<RepositoryListViewModel>();
         }
 
         public static DIRegister GetDIRegister()

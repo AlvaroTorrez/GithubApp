@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage x:Class="GithubMobileApp.Pages.MainUserListPage"
+<ContentPage x:Class="GithubMobileApp.Pages.RepositoryListPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cells="clr-namespace:GithubMobileApp.Componets.Cells"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             NavigationPage.HasNavigationBar="False"
+             Title="Repositories"
              mc:Ignorable="d">
     <ContentPage.Content>
         <AbsoluteLayout>
@@ -13,16 +13,16 @@
                 <Label Margin="0,20,0,10"
                        FontSize="Large"
                        HorizontalOptions="CenterAndExpand"
-                       Text="GitHub Users"
+                       Text="{Binding User.UserName, StringFormat='{0} Repositories'}"
                        VerticalOptions="Center" />
                 <ListView CachingStrategy="RecycleElement"
                           HasUnevenRows="True"
-                          ItemsSource="{Binding UserList}"
+                          ItemsSource="{Binding GitRepositoriesSource}"
                           SelectionMode="None"
                           SeparatorVisibility="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <cells:UserCell />
+                            <cells:RepositoryCell />
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

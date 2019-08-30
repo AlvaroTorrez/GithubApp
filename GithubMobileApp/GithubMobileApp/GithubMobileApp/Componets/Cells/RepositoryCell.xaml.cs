@@ -1,6 +1,4 @@
-﻿using GithubMobileApp.Core.Models;
-using GithubMobileApp.Pages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace GithubMobileApp.Componets.Cells
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class UserCell : ViewCell
+    public partial class RepositoryCell : ViewCell
     {
-        public UserCell()
+        public RepositoryCell()
         {
             InitializeComponent();
-        }
-
-        private void TapOpenRepository(object sender, EventArgs e)
-        {
-            Application.Current.MainPage.Navigation.PushAsync(new RepositoryListPage(BindingContext as User));
         }
 
         private async void TapOpenBrowserLink(object sender, EventArgs e)

@@ -16,7 +16,7 @@ namespace GithubMobileApp
 
             InitializeComponent();
 
-            MainPage = new MainUserListPage();
+            MainPage = new NavigationPage(new MainUserListPage());
         }
 
         protected override void OnStart()

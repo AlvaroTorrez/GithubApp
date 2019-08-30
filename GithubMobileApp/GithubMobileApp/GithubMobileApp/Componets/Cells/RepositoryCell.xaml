@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ViewCell x:Class="GithubMobileApp.Componets.Cells.RepositoryCell"
+          xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ViewCell.View>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Text="{Binding RepositoryName}" />
+            <Label Grid.Row="1"
+                   Grid.Column="0"
+                   Text="{Binding Description}" />
+            <Label Grid.Row="2"
+                   Grid.Column="0"
+                   Text="{Binding UrlRepository}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="TapOpenBrowserLink" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <StackLayout Grid.Row="3"
+                         Grid.Column="0"
+                         Orientation="Horizontal">
+                <Label HorizontalOptions="CenterAndExpand" Text="{Binding OpenIssuesCount, StringFormat='Issues {0}'}" />
+                <Label HorizontalOptions="CenterAndExpand" Text="{Binding ForksCount, StringFormat='Forks {0}'}" />
+            </StackLayout>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

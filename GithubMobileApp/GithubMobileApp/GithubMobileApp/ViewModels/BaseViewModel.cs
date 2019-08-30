@@ -9,6 +9,10 @@ namespace GithubMobileApp.ViewModels
     public class BaseViewModel<T> : BaseViewModel
     {
 
+        public virtual void Prepare(T date)
+        {
+            Prepare();
+        }
     }
 
     public class BaseViewModel : INotifyPropertyChanged
@@ -22,6 +26,13 @@ namespace GithubMobileApp.ViewModels
 
         public virtual async Task Initialization()
         {
+        }
+
+        public virtual void Prepare()
+        {
+            Task.Run(async () => {
+                await Initialization();
+            });
         }
     }
 }

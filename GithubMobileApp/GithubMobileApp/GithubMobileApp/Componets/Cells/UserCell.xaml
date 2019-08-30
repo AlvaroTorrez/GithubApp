@@ -14,10 +14,12 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Image Grid.Row="0"
+            <Image x:Name="ImageAvatar"
+                   Grid.Row="0"
                    Grid.RowSpan="3"
                    Grid.Column="0"
                    Aspect="AspectFill"
+                   HeightRequest="{Binding Source={x:Reference ImageAvatar}, Path=Width}"
                    Source="{Binding AvatarUrl}" />
             <Label Grid.Row="1"
                    Grid.Column="1"
