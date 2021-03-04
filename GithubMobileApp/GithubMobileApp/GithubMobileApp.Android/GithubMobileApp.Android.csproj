@@ -15,7 +15,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     <NuGetPackageImportStamp>
@@ -93,7 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GithubMobileApp\GithubMobileApp.csproj">
-      <Project>{82BECA2D-8413-466B-B0D9-EEC557253CFB}</Project>
+      <Project>{7799B961-14A8-4808-AC38-A2A83883CEC3}</Project>
       <Name>GithubMobileApp</Name>
     </ProjectReference>
   </ItemGroup>
