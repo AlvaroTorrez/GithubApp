@@ -17,8 +17,6 @@ namespace GithubMobileApp.Core.Repositories
         }
         public async Task<IEnumerable<GitRepository>> GetAllRepositoriesByUser(string user)
         {
-            // In this part we verified if we are online
-            // for this exmple we are supost online
             var result = await _repositoryRequestService.RequestAllRepositoriesByUserName(user, new Dictionary<string, string>());
             return result;
         }

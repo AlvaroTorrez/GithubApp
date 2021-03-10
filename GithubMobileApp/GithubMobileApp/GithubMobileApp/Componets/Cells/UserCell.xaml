@@ -8,8 +8,8 @@
               VerticalOptions="FillAndExpand">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="7*" />
-                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="6*" />
+                <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="5" />
@@ -21,8 +21,13 @@
                    Grid.RowSpan="3"
                    Grid.Column="0"
                    Aspect="AspectFill"
-                   HeightRequest="{Binding Source={x:Reference ImageAvatar}, Path=Width}"
-                   Source="{Binding AvatarUrl}" />
+                   HeightRequest="{Binding Source={x:Reference ImageAvatar}, Path=Width}">
+                <Image.Source>
+                    <UriImageSource Uri="{Binding AvatarUrl}" 
+                                    CacheValidity="14"
+                                    CachingEnabled="True"/>
+                </Image.Source>
+            </Image>
             <Label Grid.Row="1"
                    Grid.Column="1"
                    FontSize="Medium"
@@ -41,9 +46,12 @@
                    Grid.RowSpan="3"
                    Grid.Column="2"
                    FontSize="Large"
-                   HorizontalOptions="CenterAndExpand"
-                   Text="&gt;"
-                   VerticalOptions="CenterAndExpand">
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="FillAndExpand"
+                   Text="&#xf054;"
+                   FontFamily="{StaticResource FontAwesomeSolid}"
+                   VerticalOptions="FillAndExpand">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapOpenRepository" />
                 </Label.GestureRecognizers>

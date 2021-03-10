@@ -24,14 +24,27 @@ namespace GithubMobileApp.ViewModels
 
         }
 
-        public virtual async Task Initialization()
+        public virtual Task Initialization()
         {
+            return Task.CompletedTask;
         }
 
         public virtual void Prepare()
         {
             Task.Run(async () => {
-                await Initialization();
+                try
+                {
+                    await Initialization();
+                }
+                catch (System.OperationCanceledException ex)
+                {
+                    Console.WriteLine($"Text load cancelled: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                
             });
         }
     }
